@@ -1,6 +1,6 @@
 ---
 import VueApp from "../Vue/App.vue"
-import SvelteApp from "../Svelte/App.svelte"
+import SvelteApp from "../../Svelte/src/routes/+page.svelte"
 ---
 
 <html lang="en">
@@ -17,6 +17,6 @@ import SvelteApp from "../Svelte/App.svelte"
 		<h2>Vue</h2>
 		<VueApp />
 		<h2>Svelte</h2>
-		<SvelteApp />
+		<SvelteApp client:load />
 	</body>
 </html>

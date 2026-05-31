@@ -1,12 +1,18 @@
 const baseURL = "https://api.frankfurter.dev/v2"
 
 export async function getCurrencies() {
-	const response = await fetch(baseURL + "/currency")
+	const response = await fetch(baseURL + "/currencies")
 	if (!response.ok) {
 		throw new Error("API error")
 	}
 
-	return await response.json()
+	const data = await response.json()
+
+	if (Array.isArray(data)) {
+		return Object.fromEntries(data.map((currency) => [currency.iso_code, currency.name]))
+	}
+
+	return data
 }
 
 export async function getRate(fromCurrency: string, toCurrency: string) {
