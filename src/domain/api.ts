@@ -16,20 +16,20 @@ export async function getCurrencies() {
 }
 
 export async function getRate(fromCurrency: string, toCurrency: string) {
-	// TODO check correct order of currency parameters
-	const response = await fetch(baseURL + `/rate/${fromCurrency}/${toCurrency}`)
+	const response = await fetch(baseURL + `/latest?from=${fromCurrency}&to=${toCurrency}`)
 	if (!response.ok) {
 		throw new Error("API error")
 	}
 
-	return (await response.json())["rate"]
+	const data = await response.json()
+	return data["rates"][toCurrency]
 }
 
-export async function getHistoricalRates(currency: string, fromDate, toDate) {
-	const response = await fetch(baseURL + `/rates?from=${fromDate}&to=${toDate}&quotes=${currency}`)
+export async function getHistoricalRates(currency: string, fromDate: string, toDate: string) {
+	const response = await fetch(baseURL + `/${fromDate}..${toDate}?from=${currency}`)
 	if (!response.ok) {
 		throw new Error("API error")
 	}
 
-	return (await response.json())
+	return await response.json()
 }

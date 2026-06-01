@@ -427,12 +427,12 @@
 		align-items: center;
 		justify-content: space-between;
 		padding-top: 0.4rem;
-		color: rgba(248, 251, 255, 0.8);
+		color: #40536d;
 	}
 
 	.refresh {
 		padding: 0.8rem 1rem;
-		background: rgba(255, 255, 255, 0.14);
+		background: #132238;
 		color: #fff;
 	}
 
@@ -440,7 +440,7 @@
 		padding: 0.85rem 1rem;
 		border-radius: 14px;
 		background: rgba(255, 110, 110, 0.16);
-		color: #ffdede;
+		color: #c53030;
 	}
 
 	input:disabled,

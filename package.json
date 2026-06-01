@@ -9,7 +9,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@astrojs/svelte": "^8.1.2",
@@ -18,5 +20,12 @@
     "svelte": "^5.56.0",
     "typescript": "^6.0.3",
     "vue": "^3.5.35"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/svelte": "^5.3.1",
+    "@vue/test-utils": "^2.4.10",
+    "jsdom": "^28.1.0",
+    "vitest": "^4.1.8"
   }
 }
