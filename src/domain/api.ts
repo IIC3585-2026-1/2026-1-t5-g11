@@ -24,3 +24,12 @@ export async function getRate(fromCurrency: string, toCurrency: string) {
 
 	return (await response.json())["rate"]
 }
+
+export async function getHistoricalRates(currency: string, fromDate, toDate) {
+	const response = await fetch(baseURL + `/rates?from=${fromDate}&to=${toDate}&quotes=${currency}`)
+	if (!response.ok) {
+		throw new Error("API error")
+	}
+
+	return (await response.json())
+}
